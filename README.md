@@ -4,7 +4,15 @@
 
 A Elder Scrolls fans dream.
 
-[TOC]
+
+
+#### Store home page
+
+![web-page-1](.github\web-page-1.png)
+
+#### About Us
+
+![web-page-2](.github\web-page-2.png)
 
 ## Prerequisite
 
@@ -23,6 +31,6 @@ To get started make sure you installed all the [Prerequisite](#Prerequisite). Af
 4. Start the database with docker `docker-compose up -d`
 5. Run the migration `yarn run migration`
 6. Seed the database `yarn run seed`
-7. Start the server after the database is running `yarn start:dev`
+7. Start the server after the database is running `yarn start:debug`
 8. Open your browser and open http://localhost:3000
 9. Done!
