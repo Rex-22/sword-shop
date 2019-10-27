@@ -30,13 +30,13 @@
                 <h5 class="card-title">{{ this.name }}</h5>
                 <p class="card-text">{{ this.short_description }}</p>
                 <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm
-                            btn-outline-info">View</button>
+                    {{!-- <div class="btn-group"> --}}
+                        {{!-- <button type="button" class="btn btn-sm
+                            btn-outline-info">View</button> --}}
                         <a href="/add-to-cart/{{this.id}}" class="btn
                             btn-sm
                             btn-outline-success">Add to cart</a>
-                    </div>
+                        {{!-- </div> --}}
                     <small class="text-muted price">R {{this.price}}</small>
                 </div>
             </div>

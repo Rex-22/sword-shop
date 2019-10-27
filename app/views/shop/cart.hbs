@@ -13,14 +13,14 @@
             <tr>
                 <td>{{this.item.name}}</td>
                 <td class="text-right quantity"><a
-                        href="/cart-add/{this}"
+                        href="/remove-from-cart/{{this.item.id}}"
                         class="btn
                         btn-sm
                         btn-outline-danger" style="border:none;"><i class="fa
                             fa-minus"></i></a>
                     {{this.qty}}
                     <a
-                        href="/cart-add/{this}"
+                        href="/add-to-cart/{{this.item.id}}"
                         class="btn
                         btn-sm
                         btn-outline-success" style="border:none;"><i class="fa
