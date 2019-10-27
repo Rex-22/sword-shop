@@ -1,0 +1,31 @@
+:root {
+  /* CSS Variables
+        Some of theses are overwritten from Bootstrap
+
+        See: https://www.w3schools.com/css/css3_variables.asp
+        See: https://getbootstrap.com/docs/4.3/getting-started/theming/#css-variables
+    */
+  --font-family: Nunito, "Lucida Grande", Helvetica, Arial, sans-serif;
+  --link-color: #00b7ff;
+}
+
+body {
+  font: 14px var(--font-family);
+}
+
+a {
+  color: var(--link-color);
+}
+
+.nav-item {
+    font: 18px var(--font-family)
+}
+
+.card img {
+    height:500px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 16px;
+}

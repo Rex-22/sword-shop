@@ -1,6 +1,7 @@
 var express = require("express");
 var path = require("path");
 var logger = require("morgan");
+var favicon = require("serve-favicon");
 var cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
 var expressHbs = require("express-handlebars");
@@ -8,6 +9,7 @@ var expressHbs = require("express-handlebars");
 var routes = require("./routes/");
 
 var app = express();
+app.use(favicon(path.join(__dirname, "public/images", "favicon.ico")));
 
 // View engine setup
 app.engine(".hbs", expressHbs({ defaultLayout: "layout", extname: ".hbs" }));
