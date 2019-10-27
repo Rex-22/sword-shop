@@ -8,7 +8,7 @@ A Elder Scrolls fans dream.
 
 #### Store home page
 
-![web-page-1](.https://github.com/Rex-22/sword-shop/blob/master/.github/web-page-1.png)
+![web-page-1](https://github.com/Rex-22/sword-shop/blob/master/.github/web-page-1.png)
 
 #### About Us
 
