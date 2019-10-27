@@ -1,0 +1,53 @@
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Product</th>
+                <th scope="col" class="text-right">Qty</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{# if products}}
+            {{# each products}}
+            <tr>
+                <td>{{this.item.name}}</td>
+                <td class="text-right quantity"><a
+                        href="/cart-add/{this}"
+                        class="btn
+                        btn-sm
+                        btn-outline-danger" style="border:none;"><i class="fa
+                            fa-minus"></i></a>
+                    {{this.qty}}
+                    <a
+                        href="/cart-add/{this}"
+                        class="btn
+                        btn-sm
+                        btn-outline-success" style="border:none;"><i class="fa
+                            fa-plus"></i></a></td>
+                <td>R {{this.price}}.00</td>
+            </tr>
+
+            {{/each}}
+            {{else}}
+            <tr>
+                <th scope="text-center">No items in cart</th>
+            </tr>
+
+            {{/if}}
+            <tr>
+                <th scope="row">Total</th>
+                <td class="text-right font-weight-bold">{{session.cart.totalQty}}</td>
+                <td class="font-weight-bold">R {{totalPrice}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{{# if products}}
+<hr>
+<div class="row">
+    <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+        <a href="/checkout" class="btn btn-success" role="button">Checkout</a>
+    </div>
+</div>
+{{/if}}
