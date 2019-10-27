@@ -1,0 +1,22 @@
+{
+  "name": "sword-shop",
+  "version": "1.0.0",
+  "description": "A online shopping website for all your sword needs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rex-22/sword-shop.git"
+  },
+  "author": "Ruben Bezuidenhout",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rex-22/sword-shop/issues"
+  },
+  "homepage": "https://github.com/Rex-22/sword-shop#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
