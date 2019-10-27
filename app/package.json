@@ -6,7 +6,8 @@
     "start": "node ./bin/www",
     "start:debug": "set DEBUG=app:* & yarn start",
     "watch": "set DEBUG=app:* & nodemon ./bin/www",
-    "seed": "node ./seed/product-seed.js"
+    "seed": "node ./seed/products-seed.js",
+    "migration": "node ./migration/init.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
