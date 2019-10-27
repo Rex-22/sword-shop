@@ -22,8 +22,9 @@
     </div>
     <div class="col-md-4">
         <div class="card mb-4 box-shadow">
-            <img src="images/{{ this.image_url }}" class="card-img-top"
-                alt="product-image" data-toggle="modal"
+            <img src="images/{{ this.image_url }}" class="card-img-top mx-auto
+                d-block" alt="product-image"
+                data-toggle="modal"
                 data-target="#imagePreview{{@index}}">
             <div class="card-body">
                 <h5 class="card-title">{{ this.name }}</h5>
@@ -32,8 +33,9 @@
                     <div class="btn-group">
                         <button type="button" class="btn btn-sm
                             btn-outline-info">View</button>
-                        <button type="button" class="btn btn-sm
-                            btn-outline-success">Add to cart</button>
+                        <a href="/add-to-cart/{{this.id}}" class="btn
+                            btn-sm
+                            btn-outline-success">Add to cart</a>
                     </div>
                     <small class="text-muted price">R {{this.price}}</small>
                 </div>
