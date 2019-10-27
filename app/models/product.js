@@ -1,16 +1,28 @@
 const database = require("../middleware/database");
 
-// Represents a product in our database
+/**
+ * @class Product Represents a product in our database 
+ */
 class Product {
-  name;
-  description;
-  short_description;
-  price;
-  image_url;
+    id = 0;
+    name = "";
+    description = "";
+    short_description = "";
+    price = 0;
+    image_url = "";
 
-  // This will map any data we get the members of the class
+  /**
+   * This will map any data we get the members of the class
+   * 
+   * @param {Product} data A object with the data from a product
+   */
   constructor(data) {
-    Object.assign(this, data);
+      this.id = Number(data.id);
+    this.name = data.name;
+    this.description = data.description;
+    this.short_description = data.short_description;
+    this.price = Number(data.price);
+    this.image_url = data.image_url;
   }
 
   static async getProduct(id) {
