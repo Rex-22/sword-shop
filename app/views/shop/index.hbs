@@ -1,14 +1,33 @@
+
 <div class="row">
+    {{#each products }}
+    <!-- Modal -->
+    <div class="modal fade" id="imagePreview{{@index}}" tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/{{ this.image_url }}" class="card-img-top"
+                        alt="product-image">
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="col-md-4">
         <div class="card mb-4 box-shadow">
-            <img src="images/default_image.jpg" class="card-img-top img-fluid"
-                alt="product-image">
+            <img src="images/{{ this.image_url }}" class="card-img-top"
+                alt="product-image" data-toggle="modal"
+                data-target="#imagePreview{{@index}}">
             <div class="card-body">
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur,
-                    adipisicing elit. Repudiandae asperiores nesciunt ex
-                    voluptas dolore laboriosam itaque quos ab quia sed dicta in
-                    nobis officia quas, voluptates atque deserunt debitis
-                    maxime?</p>
+                <h5 class="card-title">{{ this.name }}</h5>
+                <p class="card-text">{{ this.short_description }}</p>
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                         <button type="button" class="btn btn-sm
@@ -16,9 +35,16 @@
                         <button type="button" class="btn btn-sm
                             btn-outline-success">Add to cart</button>
                     </div>
-                    <small class="text-muted price">R 12.00</small>
+                    <small class="text-muted price">R {{this.price}}</small>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+    $('#imagePreview{{@index}}').on('shown.bs.modal', function () {
+        $('#imagePreview{{@index}}').trigger('focus')
+    })
+    </script>
+    {{/each}}
+
 </div>
