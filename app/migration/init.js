@@ -1,5 +1,7 @@
 var database = require("../middleware/database");
 
+var seedCount = 0;
+
 // Products table
 database.query(`CREATE TABLE db.products (
             id INT auto_increment NOT NULL,
@@ -10,8 +12,9 @@ database.query(`CREATE TABLE db.products (
             image_url varchar(100) NULL,
             CONSTRAINT products_PK PRIMARY KEY (id)
         )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;`).then(result => {
-  process.exit(0);
-}).catch(err => {
+            seedCount++;
+            if (seedCount == 4) process.exit(0);
+        }).catch(err => {
   console.log(err);
   process.exit(1);
 });
@@ -22,7 +25,8 @@ database.query(`CREATE TABLE db.orders (
     PRIMARY KEY (id),
     KEY orders_FK (cart_id)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;`).then(result => {
-  process.exit(0);
+      seedCount++;
+      if (seedCount == 4) process.exit(0);
 }).catch(err => {
   console.log(err);
   process.exit(1);
@@ -36,7 +40,8 @@ database.query(`CREATE TABLE db.cart (
    KEY  cart_FK  ( cart_item ),
    CONSTRAINT  cart_FK  FOREIGN KEY ( cart_item ) REFERENCES  cart_item  ( id )
  ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;`).then(result => {
-  process.exit(0);
+     seedCount++;
+     if (seedCount == 4) process.exit(0);
 }).catch(err => {
   console.log(err);
   process.exit(1);
@@ -49,7 +54,8 @@ database.query(`CREATE TABLE db.cart_item (
     quantity  int(11) DEFAULT NULL,
    PRIMARY KEY ( id )
  ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;`).then(result => {
-  process.exit(0);
+     seedCount++;
+    if (seedCount == 4) process.exit(0);
 }).catch(err => {
   console.log(err);
   process.exit(1);
