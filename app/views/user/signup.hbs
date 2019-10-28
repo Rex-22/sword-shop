@@ -1,0 +1,82 @@
+<div class="container py-5">
+    <div class="row mb-4">
+        <div class="col-lg-8 mx-auto text-center">
+            <h1>Sign Up</h1>
+        </div>
+    </div>
+    {{#if invalidPassword}}
+    {{!-- <!-- Modal --> --}}
+    <div class="modal fade" id="invalidPasswordModal" tabindex="-1"
+        role="dialog" aria-labelledby="invalidPasswordModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="invalidPasswordModalLabel">Password
+                        Invalid</h5>
+                    <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    The password you entered was incorrect. If you are seeing
+                    this, it means you did something very wrong...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                        data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript"> 
+        $('#invalidPasswordModal').modal('show');
+    </script>
+    {{/if}}
+    <div class="row">
+        <div class="col-lg-7 mx-auto">
+            <div class="bg-white rounded-lg shadow-sm p-5">
+
+                <form role="form" method="POST" action="">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" name="email"
+                            placeholder="Your email" required
+                            class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-group">
+                            <input type="password" name="password"
+                                placeholder="Your password"
+                                class="form-control"
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                title="Must contain at least one number and one
+                                uppercase and lowercase letter, and at least 8
+                                or more characters" id="password" required>
+                        </div>
+                        <div class="alert alert-secondary mt-3" role="alert"
+                            id="message">
+                            <h4 class="alert-heading">Password must contain the
+                                following:</h4>
+                            <p id="letter" class="invalid">A <b>lowercase</b>
+                                letter</p>
+                            <p id="capital" class="invalid">A <b>capital
+                                    (uppercase)</b>
+                                letter</p>
+                            <p id="number" class="invalid">A <b>number</b></p>
+                            <p id="length" class="invalid">Minimum <b>8
+                                    characters</b></p>
+                        </div>
+                    </div>
+                    <button type="submit" class="subscribe btn
+                        btn-primary btn-block shadow-sm">
+                        Confirm </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/javascripts/password_check.js"></script>

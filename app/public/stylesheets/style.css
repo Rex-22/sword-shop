@@ -1,23 +1,23 @@
 :root {
-  /* CSS Variables
+    /* CSS Variables
         Some of theses are overwritten from Bootstrap
 
         See: https://www.w3schools.com/css/css3_variables.asp
         See: https://getbootstrap.com/docs/4.3/getting-started/theming/#css-variables
     */
-  --font-family: Nunito, "Lucida Grande", Helvetica, Arial, sans-serif;
-  --link-color: #00b7ff;
+    --font-family: Nunito, "Lucida Grande", Helvetica, Arial, sans-serif;
+    --link-color: #00b7ff;
 }
 
 body {
-  font: 14px var(--font-family);
+    font: 14px var(--font-family);
 }
 
 a {
-  color: var(--link-color);
+    color: var(--link-color);
 }
 
-.quantity{
+.quantity {
     font-size: 16px;
 }
 
@@ -26,11 +26,32 @@ a {
 }
 
 .card img {
-    max-height:500px;
+    max-height: 500px;
     max-width: 121px;
 }
 
 .price {
     font-weight: bold;
     font-size: 16px;
+}
+
+/* Add a green text color when the requirements are right */
+
+.valid {
+    color: green;
+}
+
+.valid:before {
+    position: relative;
+    left: -35px;
+}
+
+/* Add a red text color the requirements are wrong */
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    position: relative;
+    left: -35px;
 }
