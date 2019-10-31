@@ -38,8 +38,8 @@ To get started make sure you installed all the [Prerequisite](#Prerequisite). Af
 
 If for some reason you don't have/don't want to use docker. You can setup the website with a normal SQL database as well. To use a MySQL database make sure you have the following.
 
-Username: swords
-Password: sw0rdSh0p
-Root password: P@ssw0rd
+* Username: swords
+* Password: sw0rdSh0p
+* Root password: P@ssw0rd
 
 The user should be able to Create, Update and Delete records and tables. So make sure he has the proper privileges.
